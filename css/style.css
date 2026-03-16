@@ -714,8 +714,8 @@ body {
 
 .reason-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow);
-  border-color: rgba(26, 122, 110, 0.3);
+  box-shadow: 0 15px 45px rgba(26, 122, 110, 0.15);
+  border-color: var(--teal);
 }
 
 .reason-icon {
@@ -1025,8 +1025,16 @@ footer {
 .footer-bg {
   position: absolute;
   inset: 0;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Masjid_Putra%2C_Putrajaya.jpg/1280px-Masjid_Putra%2C_Putrajaya.jpg') center bottom/cover no-repeat;
-  opacity: 0.04;
+  background: url('../images/footer_bg.jpg') center bottom/cover no-repeat;
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(13, 34, 51, 0.97) 0%, rgba(13, 34, 51, 0.85) 60%, rgba(13, 34, 51, 0.7) 100%);
+  z-index: 0;
 }
 
 .footer-content {
@@ -1082,9 +1090,11 @@ footer {
 }
 
 .social-btn:hover {
-  background: var(--teal);
-  border-color: var(--teal);
-  color: white;
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(219, 158, 48, 0.3);
 }
 
 .footer-divider {
@@ -1306,6 +1316,17 @@ footer {
 .fade-in.visible {
   opacity: 1;
   transform: none;
+}
+
+/* Subtle Floating Animation */
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-content {
+  animation: floating 6s ease-in-out infinite;
 }
 
 /* stagger children */
